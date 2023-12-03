@@ -1,0 +1,24 @@
+[package]
+name = "up_the_guts_prompter_web"
+version = "0.1.0"
+edition = "2021"
+description = "An app to learn Up The Guts lines."
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dioxus = "0.4.0"
+dioxus-web = "0.4.0"
+
+
+[package.metadata.bundle]
+name = "Up The Guts"
+identifier = "com.golf.deathbygolf"
+version = "1.0.0"
+copyright = "Copyright Aaron Rolls 2022. All rights reserved."
+category = "Games"
+short_description = "Practice Up The Guts Script"
+long_description = "An App to practice the Up The Guts script lines"
+
+[application]
+out_dir = "docs"
+base_path = "deathbygolfprompter"

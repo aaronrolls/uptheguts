@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport"
+    content="width=device-width, height=device-height,  initial-scale=1.0, user-scalable=no;user-scalable=0;" />
+  <title>Death By Golf</title>
+</head>
+
+<body id="main">
+  <script type="module">
+    import init from "./assets/dioxus/name.js";
+    init("./assets/dioxus/name_bg.wasm").then(wasm => {
+      if (wasm.__wbindgen_start == undefined) {
+        wasm.main();
+      }
+    });
+  </script>
+</body>
+
+</html>

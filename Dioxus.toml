@@ -1,0 +1,28 @@
+[application]
+name = "Up The Guts"
+identifier = "com.golf.deathbygolf"
+version = "1.0.0"
+default_platform = "web"
+copyright = "Copyright Aaron Rolls 2022. All rights reserved."
+category = "Games"
+short_description = "Practice Up The Guts Script"
+long_description = "An App to practice the Up The Guts script lines"
+out_dir = "docs"
+base_path = "deathbygolfprompter"
+
+[web.app]
+
+# HTML title tag content
+title = "Up The Guts"
+
+[web.watcher]
+
+# when watcher trigger, regenerate the `index.html`
+reload_html = true
+
+# which files or dirs will be watcher monitoring
+watch_path = ["src", "public"]
+
+[web.resource]
+
+[web.resource.dev]
