@@ -1,6 +1,7 @@
 #![allow(non_snake_case)]
 use dioxus::html::a;
 use dioxus::prelude::*;
+use regex::Regex;
 use std::fs::File;
 use std::io::prelude::*;
 
@@ -201,6 +202,7 @@ fn get_previous_number(lines: &Vec<String>, char: &str, current_line: &usize) ->
     let chars: [&str; 10] = [
         "BRUCE", "STAN", "ROGER", "MARTIN", "LISA", "RAEYWN", "CHASTITY", "ANDREA", "EXTRA", "sd:",
     ];
+    let re = Regex::new(r"^\*\w").unwrap();
     let mut counters: Vec<usize> = Vec::new();
     let mut counter = *current_line;
     if counter == 0 {
@@ -210,12 +212,19 @@ fn get_previous_number(lines: &Vec<String>, char: &str, current_line: &usize) ->
     while counter > 0 {
         for c in chars {
             if lines[counter].contains(c) {
-                if lines[counter].contains("sd:") {
-                    counters.push(counter);
-                } else {
-                    counters.push(counter);
-                    return counters;
+                match re.captures(&lines[counter]) {
+                    Some(_i) => counters.push(counter),
+                    None => {
+                        counters.push(counter);
+                        return counters;
+                    }
                 }
+                //if lines[counter].contains("sd:") {
+                //    counters.push(counter);
+                //} else {
+                //    counters.push(counter);
+                //    return counters;
+                //}
             }
         }
 
@@ -318,7 +327,7 @@ fn App(cx: Scope) -> Element {
         char.with_mut(|c| c.set("ROGER"));
     };
     cx.render(rsx! {
-        p{ "Ver 0.1.0 Character - {char.read().charature.clone()} - {buffer.read().page_name.clone()}"}
+        p{ "Ver 0.1.1 Character - {char.read().charature.clone()} - {buffer.read().page_name.clone()}"}
         div {
             height:"55vh",
             overflow:"auto",
