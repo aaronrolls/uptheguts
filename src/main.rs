@@ -471,7 +471,7 @@ fn App(cx: Scope) -> Element {
             style: "-webkit-appearance: none;
             -webkit-border-radius: 0;
             border-radius: 0; color: black; font-weight: bold;
-            margin: 0.5vh; padding: 1vh; background-color: #d690d0;",
+            margin: 0.5vw; padding: 1vw; background-color: #d690d0;",
             onclick: move |_| {
                 char.with_mut(|s| s.set("ROGER"));
             },
@@ -483,7 +483,7 @@ fn App(cx: Scope) -> Element {
             style: "-webkit-appearance: none;
             -webkit-border-radius: 0;
             border-radius: 0; color: black; font-weight: bold;
-            margin: 0.5vh; padding: 1vh; background-color: #d690d0;",
+            margin: 0.5vw; padding: 1vw; background-color: #d690d0;",
             onclick: move |_| {
                 char.with_mut(|s| s.set("BRUCE"));
             },
@@ -495,7 +495,7 @@ fn App(cx: Scope) -> Element {
             style: "-webkit-appearance: none;
             -webkit-border-radius: 0;
             border-radius: 0; color: black; font-weight: bold;
-            margin: 0.5vh; padding: 1vh; background-color: #d690d0;",
+            margin: 0.5vw; padding: 1vw; background-color: #d690d0;",
             onclick: move |_| {
                 char.with_mut(|s| s.set("STAN"));
             },
@@ -507,7 +507,7 @@ fn App(cx: Scope) -> Element {
             style: "-webkit-appearance: none;
             -webkit-border-radius: 0;
             border-radius: 0; color: black; font-weight: bold;
-            margin: 0.5vh; padding: 1vh; background-color: #d690d0;",
+            margin: 0.5vw; padding: 1vw; background-color: #d690d0;",
             onclick: move |_| {
                 char.with_mut(|s| s.set("MARTIN"));
             },
@@ -519,7 +519,7 @@ fn App(cx: Scope) -> Element {
             style: "-webkit-appearance: none;
             -webkit-border-radius: 0;
             border-radius: 0; color: black; font-weight: bold;
-            margin: 0.5vh; padding: 1vh; background-color: #d690d0;",
+            margin: 0.5vw; padding: 1vw; background-color: #d690d0;",
             onclick: move |_| {
                 char.with_mut(|s| s.set("LISA"));
             },
@@ -531,7 +531,7 @@ fn App(cx: Scope) -> Element {
             style: "-webkit-appearance: none;
             -webkit-border-radius: 0;
             border-radius: 0; color: black; font-weight: bold;
-            margin: 0.5vh; padding: 1vh; background-color: #d690d0;",
+            margin: 0.5vw; padding: 1vw; background-color: #d690d0;",
             onclick: move |_| {
                 char.with_mut(|s| s.set("RAEYWN"));
             },
@@ -543,7 +543,7 @@ fn App(cx: Scope) -> Element {
             style: "-webkit-appearance: none;
             -webkit-border-radius: 0;
             border-radius: 0; color: black; font-weight: bold;
-            margin: 0.5vh; padding: 1vh; background-color: #d690d0;",
+            margin: 0.5vw; padding: 1vw; background-color: #d690d0;",
             onclick: move |_| {
                 char.with_mut(|s| s.set("CHASTITY"));
             },
@@ -555,7 +555,7 @@ fn App(cx: Scope) -> Element {
             style: "-webkit-appearance: none;
             -webkit-border-radius: 0;
             border-radius: 0; color: black; font-weight: bold;
-            margin: 0.5vh; padding: 1vh; background-color: #d690d0;",
+            margin: 0.5vw; padding: 1vw; background-color: #d690d0;",
             onclick: move |_| {
                 char.with_mut(|s| s.set("ANDREA"));
             },
