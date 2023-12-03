@@ -295,13 +295,13 @@ impl Char {
 
     fn set(&mut self, name: &str) {
         let mut int_name = name;
-        if int_name.contains(".") {
-            self.charature = String::from(int_name);
-        } else {
-            let mut thing = String::from(int_name);
-            thing.push('.');
-            self.charature = thing;
-        }
+        //if int_name.contains(".") {
+        self.charature = String::from(int_name);
+        //} else {
+        //    let mut thing = String::from(int_name);
+        //    thing.push('.');
+        //    self.charature = thing;
+        //}
     }
 }
 
