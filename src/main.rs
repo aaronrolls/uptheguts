@@ -475,7 +475,7 @@ fn App(cx: Scope) -> Element {
             onclick: move |_| {
                 char.with_mut(|s| s.set("ROGER"));
             },
-            "ROGER"
+            "ROGE"
         }
         button {
             padding: "10px",
@@ -487,7 +487,7 @@ fn App(cx: Scope) -> Element {
             onclick: move |_| {
                 char.with_mut(|s| s.set("BRUCE"));
             },
-            "BRUCE"
+            "BRUC"
         }
         button {
             padding: "10px",
@@ -511,7 +511,7 @@ fn App(cx: Scope) -> Element {
             onclick: move |_| {
                 char.with_mut(|s| s.set("MARTIN"));
             },
-            "MARTIN"
+            "MART"
         }
         button {
             padding: "10px",
@@ -535,7 +535,7 @@ fn App(cx: Scope) -> Element {
             onclick: move |_| {
                 char.with_mut(|s| s.set("RAEYWN"));
             },
-            "RAEYWN"
+            "RAEY"
         }
         button {
             padding: "10px",
@@ -547,7 +547,7 @@ fn App(cx: Scope) -> Element {
             onclick: move |_| {
                 char.with_mut(|s| s.set("CHASTITY"));
             },
-            "CHASTITY"
+            "CHAS"
         }
         button {
             padding: "10px",
@@ -559,7 +559,7 @@ fn App(cx: Scope) -> Element {
             onclick: move |_| {
                 char.with_mut(|s| s.set("ANDREA"));
             },
-            "ANDREA"
+            "ANDR"
         }
         }
 
