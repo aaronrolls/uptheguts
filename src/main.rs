@@ -199,8 +199,8 @@ fn get_current_number(lines: &Vec<String>, char: &str, current_line: &usize) -> 
 }
 
 fn get_previous_number(lines: &Vec<String>, char: &str, current_line: &usize) -> Vec<usize> {
-    let chars: [&str; 10] = [
-        "BRUCE", "STAN", "ROGER", "MARTIN", "LISA", "RAEYWN", "CHASTITY", "ANDREA", "EXTRA", "sd:",
+    let chars: [&str; 9] = [
+        "BRUCE", "STAN", "ROGER", "MARTIN", "LISA", "RAEYWN", "CHASTITY", "ANDREA", "EXTRA",
     ];
     let re = Regex::new(r"^\*\w").unwrap();
     let mut counters: Vec<usize> = Vec::new();
@@ -210,23 +210,28 @@ fn get_previous_number(lines: &Vec<String>, char: &str, current_line: &usize) ->
     }
     counter = counter - 1;
     while counter > 0 {
-        for c in chars {
-            if lines[counter].contains(c) {
-                match re.captures(&lines[counter]) {
-                    Some(_i) => counters.push(counter),
-                    None => {
+        //for c in chars {
+        match re.captures(&lines[counter]) {
+            Some(_i) => counters.push(counter),
+            None => {
+                for c in chars {
+                    if lines[counter].contains(c) {
                         counters.push(counter);
                         return counters;
                     }
                 }
-                //if lines[counter].contains("sd:") {
-                //    counters.push(counter);
-                //} else {
-                //    counters.push(counter);
-                //    return counters;
-                //}
             }
         }
+        //if lines[counter].contains(c) {
+
+        //if lines[counter].contains("sd:") {
+        //    counters.push(counter);
+        //} else {
+        //    counters.push(counter);
+        //    return counters;
+        //}
+        //}
+        //}
 
         counter -= 1;
     }
@@ -327,7 +332,7 @@ fn App(cx: Scope) -> Element {
         char.with_mut(|c| c.set("ROGER"));
     };
     cx.render(rsx! {
-        p{ "Ver 0.1.1 Character - {char.read().charature.clone()} - {buffer.read().page_name.clone()}"}
+        p{ "Ver 0.1.2 Character - {char.read().charature.clone()} - {buffer.read().page_name.clone()}"}
         div {
             height:"55vh",
             overflow:"auto",
