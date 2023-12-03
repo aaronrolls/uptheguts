@@ -332,7 +332,7 @@ fn App(cx: Scope) -> Element {
         char.with_mut(|c| c.set("ROGER"));
     };
     cx.render(rsx! {
-        p{ "Ver 0.1.2 Character - {char.read().charature.clone()} - {buffer.read().page_name.clone()}"}
+        p{ "Ver 0.1.3 Character - {char.read().charature.clone()} - {buffer.read().page_name.clone()}"}
         div {
             height:"55vh",
             overflow:"auto",
@@ -375,11 +375,11 @@ fn App(cx: Scope) -> Element {
                 let pcount = get_previous_number(&lines5, &char.read().charature, &count);
                 //let count = buffer.read().current_line;
                 let pcount: Vec<usize> = pcount.into_iter().rev().collect();
+                let re = Regex::new(r"^\*\w").unwrap();
                 for each in &pcount {
-                    if lines5[*each].contains("sd:") {
-                        buffer.with_mut(|buff| buff.add(create_line(&lines5[*each], "#e3aa19")));
-                    } else {
-                        buffer.with_mut(|buff| buff.add(create_line(&lines5[*each], "red")));
+                    match re.captures(&lines5[*each]) {
+                        Some(_i) => buffer.with_mut(|buff| buff.add(create_line(&lines5[*each], "#e3aa19"))),
+                        None => buffer.with_mut(|buff| buff.add(create_line(&lines5[*each], "red"))),
                     }
                 }
                 let it = match pcount.last() {
@@ -406,12 +406,17 @@ fn App(cx: Scope) -> Element {
                 let pcount = get_previous_number(&lines4, &char.read().charature, &back_count);
                 //let count = buffer.read().current_line;
                 let pcount: Vec<usize> = pcount.into_iter().rev().collect();
+                let re = Regex::new(r"^\*\w").unwrap();
                 for each in &pcount {
-                    if lines4[*each].contains("sd:") {
-                        buffer.with_mut(|buff| buff.add(create_line(&lines4[*each], "#e3aa19")));
-                    } else {
-                        buffer.with_mut(|buff| buff.add(create_line(&lines4[*each], "red")));
+                    match re.captures(&lines4[*each]) {
+                        Some(_i) => buffer.with_mut(|buff| buff.add(create_line(&lines4[*each], "#e3aa19"))),
+                        None => buffer.with_mut(|buff| buff.add(create_line(&lines4[*each], "red"))),
                     }
+                    //if lines4[*each].contains("sd:") {
+                    //    buffer.with_mut(|buff| buff.add(create_line(&lines4[*each], "#e3aa19")));
+                    //} else {
+                    //    buffer.with_mut(|buff| buff.add(create_line(&lines4[*each], "red")));
+                    //}
                 }
                 let it = match pcount.last() {
                     Some(number) => number.to_owned(),
@@ -437,11 +442,11 @@ fn App(cx: Scope) -> Element {
                 let page = get_page(&lines, &count);
                 buffer.with_mut(|buff| buff.set_page(page));
                 let pcount: Vec<usize> = pcount.into_iter().rev().collect();
+                let re = Regex::new(r"^\*\w").unwrap();
                 for each in &pcount {
-                    if lines[*each].contains("sd:") {
-                        buffer.with_mut(|buff| buff.add(create_line(&lines[*each], "#e3aa19")));
-                    } else {
-                        buffer.with_mut(|buff| buff.add(create_line(&lines[*each], "red")));
+                    match re.captures(&lines[*each]) {
+                        Some(_i) => buffer.with_mut(|buff| buff.add(create_line(&lines[*each], "#e3aa19"))),
+                        None => buffer.with_mut(|buff| buff.add(create_line(&lines[*each], "red"))),
                     }
                 }
                 let it = match pcount.last() {
