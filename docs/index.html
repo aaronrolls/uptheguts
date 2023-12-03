@@ -2,20 +2,20 @@
 <html>
 
 <head>
-	<meta name="viewport"
-		content="width=device-width, height=device-height,  initial-scale=1.0, user-scalable=no;user-scalable=0;" />
-	<title>Up The Guts</title>
+  <meta name="viewport"
+    content="width=device-width, height=device-height,  initial-scale=1.0, user-scalable=no;user-scalable=0;" />
+  <title>Up The Guts</title>
 </head>
 
 <body id="main">
-<script type="module">
-    import init from "/./assets/dioxus/Up The Guts.js";
-    init("/./assets/dioxus/Up The Guts_bg.wasm").then(wasm => {
+  <script type="module">
+    import init from "./assets/dioxus/Up The Guts.js";
+    init("./assets/dioxus/Up The Guts_bg.wasm").then(wasm => {
       if (wasm.__wbindgen_start == undefined) {
         wasm.main();
       }
     });
-    </script>
-    </body>
+  </script>
+</body>
 
 </html>
