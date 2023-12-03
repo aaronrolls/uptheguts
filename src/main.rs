@@ -315,10 +315,10 @@ fn App(cx: Scope) -> Element {
     let mut char = use_ref(cx, Char::new);
 
     move || {
-        char.with_mut(|c| c.set("TONY."));
+        char.with_mut(|c| c.set("ROGER"));
     };
     cx.render(rsx! {
-        p{ "Ver 0.1.5 Character - {char.read().charature.clone()} - {buffer.read().page_name.clone()}"}
+        p{ "Ver 0.1.0 Character - {char.read().charature.clone()} - {buffer.read().page_name.clone()}"}
         div {
             height:"55vh",
             overflow:"auto",
