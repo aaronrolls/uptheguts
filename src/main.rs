@@ -29,7 +29,7 @@ enum Charatures {
     Roger,
     Martin,
     Lisa,
-    Raeywn,
+    RAEWYN,
     Chastity,
     Andrea,
     Extra1,
@@ -45,7 +45,7 @@ impl Charatures {
             Charatures::Chastity => String::from("Chastity"),
             Charatures::Lisa => String::from("Lise"),
             Charatures::Martin => String::from("Martin"),
-            Charatures::Raeywn => String::from("Raeywn"),
+            Charatures::RAEWYN => String::from("RAEWYN"),
             Charatures::Roger => String::from("Roger"),
             Charatures::Stan => String::from("Stan"),
             _ => String::from("Extra"),
@@ -112,7 +112,7 @@ impl Buffer {
 
     fn next(&mut self) {
         let chars: [&str; 9] = [
-            "BRUCE", "STAN", "ROGER", "MARTIN", "LISA", "RAEYWN", "CHASTITY", "ANDREA", "EXTRA",
+            "BRUCE", "STAN", "ROGER", "MARTIN", "LISA", "RAEWYN", "CHASTITY", "ANDREA", "EXTRA",
         ];
         if self.current_char.is_none() {
             return;
@@ -145,7 +145,7 @@ impl Buffer {
     fn next_out(&mut self, lines: &Vec<String>, current_line: &usize) {
         println!("{:?}", self.display);
         let chars: [&str; 9] = [
-            "BRUCE", "STAN", "ROGER", "MARTIN", "LISA", "RAEYWN", "CHASTITY", "ANDREA", "EXTRA",
+            "BRUCE", "STAN", "ROGER", "MARTIN", "LISA", "RAEWYN", "CHASTITY", "ANDREA", "EXTRA",
         ];
         if self.current_char.is_none() {
             self.current_char = Some("ROGER".to_owned());
@@ -182,7 +182,7 @@ fn get_current_number(lines: &Vec<String>, char: &str, current_line: &usize) -> 
     let next_line = *current_line + 1;
 
     let chars: [&str; 9] = [
-        "BRUCE", "STAN", "ROGER", "MARTIN", "LISA", "RAEYWN", "CHASTITY", "ANDREA", "EXTRA",
+        "BRUCE", "STAN", "ROGER", "MARTIN", "LISA", "RAEWYN", "CHASTITY", "ANDREA", "EXTRA",
     ];
 
     for each in next_line..lines.len() {
@@ -200,7 +200,7 @@ fn get_current_number(lines: &Vec<String>, char: &str, current_line: &usize) -> 
 
 fn get_previous_number(lines: &Vec<String>, char: &str, current_line: &usize) -> Vec<usize> {
     let chars: [&str; 9] = [
-        "BRUCE", "STAN", "ROGER", "MARTIN", "LISA", "RAEYWN", "CHASTITY", "ANDREA", "EXTRA",
+        "BRUCE", "STAN", "ROGER", "MARTIN", "LISA", "RAEWYN", "CHASTITY", "ANDREA", "EXTRA",
     ];
     let re = Regex::new(r"^\*\w").unwrap();
     let mut counters: Vec<usize> = Vec::new();
@@ -533,7 +533,7 @@ fn App(cx: Scope) -> Element {
             border-radius: 0; color: black; font-weight: bold;
             margin: 0.5vw; padding: 1vw; background-color: #d690d0;",
             onclick: move |_| {
-                char.with_mut(|s| s.set("RAEYWN"));
+                char.with_mut(|s| s.set("RAEWYN"));
             },
             "RAEY"
         }
